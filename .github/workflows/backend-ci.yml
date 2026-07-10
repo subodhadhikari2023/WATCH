@@ -1,0 +1,18 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build backend image
+        run: docker compose build backend
+
+      - name: Run backend tests
+        run: docker compose run --rm backend pytest -v
