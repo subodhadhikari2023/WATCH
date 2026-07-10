@@ -53,5 +53,5 @@ Setup and run instructions will be added once the Docker/CI scaffolding mileston
 ## Documentation
 
 - [Architecture](docs/architecture.md) — high-level shape of the system
-- System design — coming next
-- API design — coming after system design and UI mockups
+- [System design](docs/system-design.md) — data flow, polling, concurrency, error handling
+- API design — coming after UI mockups
