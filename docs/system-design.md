@@ -103,6 +103,35 @@ sequenceDiagram
   from the next snapshot it receives. The backend doesn't need to track
   anything special about a client that drops and comes back.
 
+## UI wireframes (Stage 3)
+
+Boxes-and-labels wireframes, grayscale only — real colors/typography come in
+the higher-fidelity mockup pass that follows this.
+
+- **Login screen**: [Figma](https://www.figma.com/design/FKJ5IiSsPLvauzBTUYSuhi) —
+  "W.A.T.C.H — Wireframes" file, frame `1 - Login`.
+- **Dashboard** (header + server card grid): `docs/wireframes/dashboard.excalidraw`
+  ([rendered SVG](wireframes/dashboard.svg) below)
+- **Card states** (Normal / Warning / Critical / Unreachable, side by side):
+  `docs/wireframes/card-states.excalidraw` ([rendered SVG](wireframes/card-states.svg) below)
+
+The Dashboard and Card States screens moved to Excalidraw mid-stage after
+hitting the Figma MCP integration's plan-level rate limit (Starter plan:
+6 tool calls/month) — the Login screen stays in Figma since it was already
+built and verified before that limit was hit. The `.excalidraw` files are the
+editable source (open at [excalidraw.com](https://excalidraw.com), File →
+Open); the `.svg` files next to them are static renders committed so the
+wireframes are viewable directly in the repo/PR diff, not just as raw JSON.
+
+![Dashboard wireframe](wireframes/dashboard.svg)
+
+![Card states wireframe](wireframes/card-states.svg)
+
+Card states confirm the two decisions made for this stage: a threshold
+breach recolors the **whole card** (not just the offending metric), and an
+**unreachable** server gets a distinct dashed/muted treatment rather than
+reusing the critical-red styling.
+
 ## Explicitly out of scope for this doc
 
 - Exact WebSocket/REST message shapes and field names — `docs/api-design.md`.
