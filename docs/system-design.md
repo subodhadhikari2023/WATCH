@@ -160,6 +160,7 @@ that's the actual point of the color system.
 
 - Exact WebSocket/REST message shapes and field names — `docs/api-design.md`.
 - What happens to an in-flight connection when a JWT expires mid-session —
-  an auth-contract detail that belongs with the rest of the API design.
-- UI states/layout — Figma, then `docs/api-design.md` once the UI reveals
-  what fields are actually needed.
+  resolved in `docs/api-design.md` (close code 4402, frontend redirects to
+  login instead of reconnect-backoff).
+- UI states/layout — Figma/Excalidraw, then `docs/api-design.md` once the UI
+  revealed what fields are actually needed.

@@ -54,4 +54,4 @@ Setup and run instructions will be added once the Docker/CI scaffolding mileston
 
 - [Architecture](docs/architecture.md) — high-level shape of the system
 - [System design](docs/system-design.md) — data flow, polling, concurrency, error handling
-- API design — coming after UI mockups
+- [API design](docs/api-design.md) — REST + WebSocket contract, auth, threshold rules
