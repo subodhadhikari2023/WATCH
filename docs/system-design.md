@@ -30,6 +30,23 @@ over SSH (CPU%, memory usage, disk usage).
 
 ## End-to-end data flow
 
+```mermaid
+sequenceDiagram
+    participant T as Tick (every 5s)
+    participant B as Backend (FastAPI)
+    participant S as Monitored Servers
+    participant C as Browser Clients
+
+    T->>B: fire tick
+    par concurrent per-server polls (asyncio.gather)
+        B->>S: SSH: read CPU/mem/disk stats
+        S-->>B: stats (or timeout/error)
+    end
+    B->>B: update in-memory snapshot<br/>(per-server stats + failure counters)
+    B->>C: broadcast snapshot (WebSocket)
+    C->>C: update cards, compute threshold colors
+```
+
 1. A global timer fires every **5 seconds** (the polling interval).
 2. For each configured server, a coroutine runs the stat-reading commands
    over that server's existing `asyncssh` connection.
