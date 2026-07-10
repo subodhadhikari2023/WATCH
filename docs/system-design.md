@@ -132,6 +132,30 @@ breach recolors the **whole card** (not just the offending metric), and an
 **unreachable** server gets a distinct dashed/muted treatment rather than
 reusing the critical-red styling.
 
+## UI mockup (Stage 3 — high fidelity)
+
+Same three screens, real colors and typography this time. All three moved to
+Excalidraw (including Login, previously in Figma) so the full set uses one
+consistent visual language.
+
+- `docs/mockups/login.excalidraw` ([SVG](mockups/login.svg))
+- `docs/mockups/dashboard.excalidraw` ([SVG](mockups/dashboard.svg))
+- `docs/mockups/card-states.excalidraw` ([SVG](mockups/card-states.svg))
+
+![Login mockup](mockups/login.svg)
+
+![Dashboard mockup](mockups/dashboard.svg)
+
+![Card states mockup](mockups/card-states.svg)
+
+Palette: green `#2f9e44` / amber `#f08c00` / red `#e03131` for the three
+threshold states, neutral grey `#868e96` (dashed border) for unreachable,
+indigo `#3b5bdb` as the one brand/action color (login button, logo mark) —
+kept out of the status range so it's never confused with a threshold color.
+The dashboard grid intentionally mixes all three live states (one warning,
+one critical, rest normal) rather than showing an all-green sample, since
+that's the actual point of the color system.
+
 ## Explicitly out of scope for this doc
 
 - Exact WebSocket/REST message shapes and field names — `docs/api-design.md`.
